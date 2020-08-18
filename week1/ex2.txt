@@ -1,0 +1,52 @@
+    1  gcc
+    2  sudo apt install git
+    3  sudo apt install gcc
+    4  sudo apt install ./zoom_amd64.deb
+    5  sudo apt install zoom_amd64.deb
+    6  ls -l
+    7  cd Downloads/
+    8  ls -l
+    9  cd ..
+   10  sudo apt-get install libxcb-xtest0
+   11  sudo apt install gdebi
+   12  ls 
+   13  ls -l
+   14  zoom
+   15  telegram
+   16  пше
+   17  git
+   18  gcc
+   19  whoami
+   20  hostname
+   21  man help
+   22  man man
+   23  man whoami
+   24  man -h | head
+   25  head man -h
+   26  head man
+   27  ls
+   28  ls > list.txt
+   29  ls -l
+   30  cat list.txt 
+   31  head -n 3 < file.txt
+   32  head -n 3 < list.txt
+   33  pwd
+   34  mkdir test
+   35  cd test
+   36  rm 
+   37  cd ..
+   38  rm file.txt
+   39  ls
+   40  rm list.txt 
+   41  rmdir -r test
+   42  rm -r test
+   43  ls
+   44  gedit a.txt
+   45  ls
+   46  mkdir week1
+   47  ls
+   48  ls /usr/bin | grep gcc | sort -r > week1/ex1.txt
+   49  cd week1/
+   50  cat ex1.txt 
+   51  ls
+   52  history > ex2.txt
