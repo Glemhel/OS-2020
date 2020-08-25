@@ -1,3 +1,9 @@
+/**
+ * 
+ * Mikhail Rudakov, BS19-02
+ * 
+*/
+
 #include <stdio.h>
 #include <string.h>
 
