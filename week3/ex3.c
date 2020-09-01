@@ -83,5 +83,26 @@ int main(){
     insert_node(mylist, 0, 11);
     insert_node(mylist, 0, 123);
     print_list(mylist);
+    /*
+        Here is the output:
+    Successeful insertion of 1
+    Successeful insertion of 2
+    Successeful insertion of 3
+    Successeful insertion of 4
+    Unsuccessful insertion : index out of range
+    Here is your list of length 4:
+    1 3 2 4 
+    Successeful deletion of list [0]
+    Successeful deletion of list [2]
+    Unsuccessful deletion : index out of range
+    Successeful deletion of list [0]
+    Successeful deletion of list [0]
+    Here is your list of length 0:
+    Successeful insertion of 11
+    Successeful insertion of 123
+    Here is your list of length 2:
+    123 11 
+    */
+
     return 0;
 }
