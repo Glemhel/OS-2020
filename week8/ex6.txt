@@ -1,0 +1,4 @@
+16-bit virtual addresses = 2 ** 16 = 65536 bytes = 64 kb of memory available.
+Pages are 8kb each = 2 ** 13 bytes = 13-bit addresses.
+The number of virtual pages = 2 ** 16 / 2 ** 13 = 2 ** 3 = 8 pages.
+Answer: 8 pages are needed.

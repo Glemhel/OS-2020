@@ -1,0 +1,14 @@
+As we see, ex2 file is present in the table with results and it eats a lot of resource.
+
+7602 mikhail   20   0 3148228   3,0g    312 S  56,2  39,4   0:01.27 ex2                                                                            
+   3310 mikhail   20   0  720408  75980  36032 S  12,5   1,0   2:51.82 code                                                                           
+    531 root       0 -20       0      0      0 I   6,2   0,0   0:05.42 kworker/u17:2-hci0                                                             
+   3367 mikhail   20   0   14,7g 177772  40576 S   6,2   2,2   7:04.88 code                                                                           
+   4464 mikhail   20   0 2564188 119804  22572 S   6,2   1,5   1:22.54 file:// Content                                                                
+   7607 mikhail   20   0   20616   4016   3236 R   6,2   0,1   0:00.02 top                                                                            
+      1 root      20   0  167940   2180      0 S   0,0   0,0   0:06.94 systemd                                                                        
+      2 root      20   0       0      0      0 S   0,0   0,0   0:00.00 kthreadd                                                                       
+      3 root       0 -20       0      0      0 I   0,0   0,0   0:00.00 rcu_gp                                                                         
+      4 root       0 -20       0      0      0 I   0,0   0,0   0:00.00 rcu_par_gp                                                                     
+      6 root       0 -20       0      0      0 I   0,0   0,0   0:00.00 kworker/0:0H-kblockd                                                           
+      9 root       0 -20       0      0      0 I   0,0   0,0   0:00.00 mm_percpu_wq                                                                   

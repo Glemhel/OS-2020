@@ -1,0 +1,9 @@
+Physical address is a real address that can be used while working on a machine - we can write and read
+stuff from it, this is a real address in our memory.
+However, virtual address is not a real part of memory. Due to large needs of programs, they use virtual address space
+abstraction. They use virtual address as it was real. But in reality, special MMU maps virtual addresses to 
+real physical addresses properly. Although it may happen that not every virtual address is mapped to a physical address as
+there are not enough real memory on the computer, virtual adresseses 'take turns' to be used and executed on a device when their
+time has come.
+So, physical address is real part of memory, while virtual address is like a promise to a process that it has its own memory, while
+this virtual adress(or its part if it's too big) is mapped to some physical address.
