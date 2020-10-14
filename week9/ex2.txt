@@ -1,0 +1,41 @@
+As we see, for sample test file from Moodle number of hits is around N (number of page frames),
+so the ratio is around (N / 10) %.
+
+---INCREASE---
+If we want to increase the ratio, we might want to do one of the following: decrease the number of different pages requested,
+or place requests in such a way that the same page is requested frequently, e.g. around 1 in N requests.
+Such tests are provided in input2.txt and input3.txt respectively.
+Input2.txt: Generated numbers randomly.
+200 different pages exist.
+Outputs:
+    N = 100: 0.478000
+    N = 50: 0.244000
+    N = 10: 0.055000
+65 different pages exist:
+Outputs:
+    N = 100: 0.935000
+    N = 50: 0.742000
+    N = 10: 0.166000
+14 different pages exist:
+Outputs:
+    N = 100: 0.986000
+    N = 50: 0.986000
+    N = 10: 0.710000
+
+As we see, ratio is increased even for N = 10.
+
+Input3.txt: (only for N = 10): Manually constructed relatively small sequence of numbers that fit our condition.
+Output: 0.822222
+
+---DECREASE---
+Obviously, we need to do the opposite: increase number of queryied pages or space requests more evenly along the whole query sequence.
+We will do it both at the same time by generating random numbers in large interval in input4.txt
+
+Input4.txt:
+2451 different pages exist:
+Outputs:
+    N = 100: 0.032000
+    N = 50: 0.015000
+    N = 10: 0.002000
+
+Ratios decreased
