@@ -1,0 +1,7 @@
+Files with inode number = 654524 in this directory are:
+        file1
+        link1
+--done--
+
+
+This was result of executing ex4.c , all according to the plan.
