@@ -1,0 +1,24 @@
+Command:
+link ~/OS2020/week1/file.txt _ex2.txt
+Output:
+no output
+
+Command (to see i-node number):
+ls -i _ex2.txt
+Output:
+132218 _ex2.txt
+
+Command:
+find ~/OS2020 -inum 132218
+Output:
+/home/mikhail/OS2020/week10/_ex2.txt
+/home/mikhail/OS2020/week1/file.txt
+Comment:
+All files with i-node number of file.txt were found, work fine
+
+Command:
+find ~ -inum 132218 -exec rm {} \;
+Output:
+none
+Comment:
+Deleted all the files found by the previous command

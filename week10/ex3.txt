@@ -1,0 +1,35 @@
+Command:
+chmod -x _ex3.txt
+Result:
+-rw-rw-r-- 1 mikhail mikhail 0 окт 20 15:38 _ex3.txt
+
+Command:
+chmod uo+rwx _ex3.txt
+Result:
+-rwxrw-rwx 1 mikhail mikhail 0 окт 20 15:38 _ex3.txt
+Comment:
+user and others now have rwx, group rights are not changed
+
+What does 660 mean for ex3.txt? 
+Command:
+chmod 660 _ex3.txt
+Output:
+-rw-rw---- 1 mikhail mikhail 0 окт 20 15:38 _ex3.txt
+Comment:
+grants rw to user, group, no right for others
+
+What does 775 mean for ex3.txt? 
+Command:
+chmod 775 _ex3.txt
+Output:
+-rwxrwxr-x 1 mikhail mikhail 0 окт 20 15:38 _ex3.txt
+Comment:
+grants rwx to user, group, rx for others
+
+What does 777 mean for ex3.txt? 
+Command:
+chmod 777 _ex3.txt
+Output:
+-rwxrwxrwx 1 mikhail mikhail 0 окт 20 15:38 _ex3.txt
+Comment:
+grants rwx for everyone

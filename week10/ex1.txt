@@ -1,0 +1,21 @@
+Command:
+ls -i _ex1.txt
+Output:
+654390 _ex1.txt
+Comment:
+This file was just created, all as usual.
+
+Command:
+ls -i _ex1_1.txt
+Output:
+654390 _ex1_1.txt
+Comment:
+We see that this file's i-node number is the same as the _ex1.txt. Makes sense as we created a hard link.
+
+Command:
+ls -i _ex1_2.txt
+Output:
+654390 _ex1_2.txt
+Comment:
+Same explanation as the previous one. Still fine.
+
