@@ -1,0 +1,22 @@
+Program 1 prints:
+Hello
+Hello
+
+---
+Program 2 prints:
+Hello
+
+
+---
+
+So, as we see, "Hello" + "\n" is printed twice in Program 1,
+while in Program 2 "Hello" is printed only once, but "\n" is printed three times.
+
+This happens due to buffer flush before fork in Program 2 compared to Program 1.
+
+In Program 1, output buffer is not flushed(by \n) before fork. Thus, the fork happens before the content of the
+buffer was outputted and released, so in both processes "Hello" is inside the buffer. When "\n" is printed,
+in both processes string "Hello\n" is released from the buffer to the stdout, as we really see.
+
+In Program 2, in contrast, buffer was cleared before fork(). Therefore, string "Hello\n" is printed, buffer is empty
+now, and then fork happens. In fork, only "\n" is printed by both processes, so 3 "\n" overall.
