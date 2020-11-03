@@ -7,8 +7,8 @@ Program 2 prints:
 Hello
 
 
----
 
+---
 So, as we see, "Hello" + "\n" is printed twice in Program 1,
 while in Program 2 "Hello" is printed only once, but "\n" is printed three times.
 
