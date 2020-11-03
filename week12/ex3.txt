@@ -1,0 +1,51 @@
+I create files of needed size with the use of "truncate -s *size* *filename* "
+Results I got:
+
+
+BUF_SIZE = 16.
+FILE_SIZE = 1B.         FILE_SIZE = 10MB        FILE_SIZE = 700MB
+real    0m0,002s        real    0m1,024s        real    1m14,030s
+user    0m0,000s        user    0m0,276s        user    0m20,568s
+sys     0m0,002s        sys     0m0,748s        sys     0m53,351s
+
+
+BUF_SIZE = 1024.
+FILE_SIZE = 1B.         FILE_SIZE = 10MB        FILE_SIZE = 700MB
+real    0m0,003s        real    0m0,063s        real     0m1,709s
+user    0m0,000s        user    0m0,021s        user     0m0,360s
+sys     0m0,002s        sys     0m0,042s        sys      0m1,350s
+
+
+BUF_SIZE = 2020000.
+FILE_SIZE = 1B.         FILE_SIZE = 10MB        FILE_SIZE = 700MB
+real    0m0,095s        real    0m0,042s        real     0m0,878s
+user    0m0,000s        user    0m0,001s        user     0m0,004s
+sys     0m0,091s        sys     0m0,037s        sys      0m0,597s
+
+With O_SYNC:
+
+BUF_SIZE = 16.
+FILE_SIZE = 1B.         FILE_SIZE = 10MB
+real    0m0,009s        real   0m39,422s 
+user    0m0,000s        user    0m0,107s 
+sys     0m0,007s        sys     0m1,453s
+
+
+BUF_SIZE = 1024.
+FILE_SIZE = 10MB        FILE_SIZE =  30MB
+real    0m6,341s        real    0m18,675s
+user    0m0,026s        user     0m0,033s
+sys     0m0,341s        sys      0m0,843s
+
+So, as wee see, with O_SYNC on perfomance decreases, in general.
+And buffer size affects the perfomance the following way: if it's size is <= size of data copied,
+then the more - the better. But if size of the buffer is greater than the size of the data, perfomance increases
+with the increase of the size. Obviously, with the same small buffer and file size smaller files are transferred faster
+than the bigger ones.
+
+Point about BUF_SIZE is clear: if buffer has excessive size for the data, is still has to be used on the full size, so
+time depends on the buffer. When data is bigger, it depends on how big buffer is relative to the data size.
+
+Point about O_SYNC: this flag guarantees(not always stil..) that the copy program returns only after all data was actually
+transferred, while abcense of this flag let the OS do something internal or postpone the actual data copy, letting user further
+interact with the system.
