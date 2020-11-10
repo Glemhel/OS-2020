@@ -5,8 +5,8 @@
 #define USER_INPUT false
 
 int main(){
-    int M = 2; // number of resource classes
-    int N = 3; // number of processes
+    int M = 3; // number of resource classes
+    int N = 5; // number of processes
     FILE* input = fopen("input.txt","r");
     FILE* output = fopen("output.txt", "w");
     // if needed, M and N are also provided in input.txt
