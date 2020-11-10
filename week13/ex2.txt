@@ -1,1 +1,26 @@
-Sample
+Three strategies of dealing with deadlocks are considered: recovery, prevention and avoidance.
+Recovery - detect deadlocks and recover from them if they occured.
+Avoidance - schedule carefully so that deadlock never happens.
+Prevention - structurally negate the possibility of deadlocks.
+
+Let us start with first strategy and its pros and cons.
+For this technique, a really easy and effective algorithm for detecting deadlock exists. Recovery is a bit harder, as it may 
+involve checkpoints(more memory spent) or killing processes(have to rerun them), but still possible.
+Disadvantage of this strategy is that we need to know required resources for each process in advance. In real situation, it is hardly ever the case.
+But if we know - this is the perfect strategy to choose. If process involved in deadlock is, per se, compilation, it could be killed and rerun later without
+any problems.
+Another issue is that preempting resource as a way to recover may not be possible, for example, for printers - makes no sense to stop printing at the half of the page.
+
+About avoidance: it is really hardly ever used in practice since it requires too much for a real-time system: exact resources that process will need, in advance, and fixed number of processes to make computation possible. Since the second condition is nearly impossible, this strategy lacks practical application.
+However, if we have very specific system with known and fixed processses that we desing ourselves, for example, we may construct it in such a way that all prerequisities hold.
+So, we will be able to apply the Banker's algorithm for this problem to check the possibility of deadlock and, hopefully, avoid it. Under these conditions, this algorithm is quite effective as we don't spend time on recovery, rather we set our strategy in advance in a wise, deadlock-avoiding, way.
+
+Preventing is about setting constraints to our system in such a way that deadlocks can not occur by the defenition, let's say. Deadlocks are impossible because of the structure of the system. For example, spooling everything is an approach to exclude mutual exclusion. In example with a printer, we can let only printer daemon access the printer recourse itself, and other processes will just spool their needs to a special directory. Of course, then memory deadlock may happen, but in this particular case we can make it read-only, for example.
+We can also restict the number of resources that process can posess at once. You want more than want? Release then. Or global ordering of resources to make deadlock conflicts impossible. However, this is a serious restriction that may be hardly ever applicable.
+
+Summary:
+If we have theoretically perfect (or just very specific) system with all information available about it, avoidance is the best. Fast computation how to avoid deadlocks in advance, no system restrictions, no special conditions needed for devices.
+
+If the system is rather simple, or limited in some way, or involves simple processes that do not require many resources, preventing circular way condition may be used. Or, if it is a printer, we can spool output for it, attacking mutual exclusion condition. No killing of processes or additional memory for checkpoints spent. However, some additional constraints and probably other deadlocks (but just transferred from printer to memory) may arise.
+
+If processes do not have side-effects, such as compilation of a program, detection and recovery with killing may be used. Applicaple for a majority of processes, this strategy is rather efficient and fast. Also, if additional memory can be spent for checkpoints, it is a good trade-off to overcome deadlocks. If resource used is preemptable(not the printer, definitely), then preemtions could be also made. 
