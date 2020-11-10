@@ -73,7 +73,10 @@ int main(){
     if (possible_to_run == N){
         fprintf(output, "Execution scenario without deadlocks exist.\n");
     } else {
-        fprintf(output, "Deadlock with %d processes involved can occur.\n", N - possible_to_run);
+        fprintf(output, "Deadlock with %d processes involved can occur. The processes are:\n", N - possible_to_run);
+        for (int i = 0; i < N; i++)
+            if (!marked[i])
+                fprintf(output, "%d ", i + 1);
     }
     return 0;
 }
